@@ -56,8 +56,9 @@ public class Producer {
     }
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        System.out.println("made it");
-        String server = "10.8.130.115:9092"; // change this to the ip of your machine using from your local host machine: ifconfig | grep 'inet 10'
+
+        System.out.println("here with IP >> " + System.getenv("brokerserver"));
+        String server = System.getenv("brokerserver") + ":9092"; // change this to the ip of your machine using from your local host machine: ifconfig | grep 'inet 10'
         String topic = "user_registered";
 
         Producer producer = new Producer(server);

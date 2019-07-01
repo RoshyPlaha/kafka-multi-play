@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+  producer-thing:
+    build:
+      context: ./producer
+      dockerfile: Dockerfile-alternate
+    environment:
+      - brokerserver=# host of kafka broker
+    deploy:
+      mode: replicated
+      replicas: 0 # more for consumers here

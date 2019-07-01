@@ -15,7 +15,7 @@ Run and make jar for **Producer** with:  mvn clean compile assembly:single
 From the root of the project, run:
 docker build -t demo .
 
-docker run --rm -it demo:latest -p 9092:9092 2181:2181
+docker run -it demo:latest --network="host" -p 9092:9092 2181:2181
 
 
 current bug - build nested jar in maven multi project
